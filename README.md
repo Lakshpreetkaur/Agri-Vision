@@ -8,6 +8,7 @@ It helps farmers and researchers make informed decisions about crop management a
 ## 📌 Overview
 
 Agri-Vision uses deep learning and computer vision techniques to:
+
 - Detect cotton growth phases  
 - Identify crop health issues and diseases  
 - Provide confidence scores and actionable recommendations  
@@ -21,29 +22,109 @@ Agri-Vision uses deep learning and computer vision techniques to:
 - 💚 **Health Assessment** (disease & damage detection)  
 - 🤖 **AI-Powered Analysis** using deep learning  
 - 🌐 **Web Interface** (Flask-based)  
-- 📊 **JSON API** for programmatic access  
+- 📊 **REST API Support** for programmatic access  
 - 🎯 **Smart Recommendations** for farmers  
-- 📈 **Fast Processing** (< 2 seconds per image)  
+- ⚡ **Fast Processing** (< 2 seconds per image)  
+
+---
+
+## 🛠️ Tech Stack
+
+- Python  
+- Flask  
+- TensorFlow  
+- OpenCV  
+- HTML/CSS  
+- JavaScript  
 
 ---
 
 ## 📁 Project Structure
 
 ```tree
-agri-vision/
-├── app.py              # Main Flask application
-├── train.py           # Model training script
-├── requirements.txt   # Dependencies
-├── models/            # Trained models
-├── static/            # CSS, images, uploads
-├── templates/         # HTML templates
-└── results/           # Analysis results
+Agri-Vision/
+│
+├── results/                        # Stores output results and visualizations
+│   └── training_history.png
+│
+├── static/                         # Static assets
+│   ├── css/
+│   ├── uploads/
+│   └── favicon.png
+│
+├── templates/                      # Flask HTML templates
+│   ├── index.html
+│   ├── results.html
+│   └── upload.html
+│
+├── .env                            # Environment variables (create manually)
+├── .gitignore
+├── app.py                          # Main Flask application
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── train.py                        # Model training script
 ```
+
+---
+
+# 🚀 Project Setup & Execution
+
+Follow the steps below to run the project locally.
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
+
+---
+
+## 2️⃣ Create a `.env` File
+
+Create a `.env` file in the root directory of the project and add your secret key.
+
+### Example
+
+```env
+SECRET_KEY=your_secret_key_here
+```
+
+Replace `your_secret_key_here` with your actual secret key.
+
+---
+
+## 3️⃣ Install Python Dependencies
+
+Install all the required Python packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4️⃣ Run the Project
+
+Start the application using:
+
+```bash
+python app.py
+```
+
+---
+
+## ✅ Setup Complete
+
+The project should now be running successfully on your local machine.
+
+---
 
 ## 📊 Growth Phases Detected
 
 - 🌱 **Vegetative / Budding** – Early growth stage  
-- 🌸 **Flowering** – Flower development  
+- 🌸 **Flowering** – Flower development stage  
 - 🍂 **Bursting (Ripped)** – Cotton bolls opening  
 - ✅ **Harvest Ready** – Optimal harvest time  
 
@@ -52,23 +133,25 @@ agri-vision/
 ## 🩺 Health Issues Identified
 
 - ✅ **Healthy** – No issues detected  
-- 🐛 **Pink Bollworm Damage** – Pest infestation  
+- 🐛 **Pink Bollworm Damage** – Pest infestation detected  
 - 🎨 **Discoloration** – Nutrient or water deficiency  
 - ⚠️ **Other Damage** – Miscellaneous crop issues  
 
 ---
 
-## 🛠️ API Usage
+# 🛠️ API Reference
 
-### Analyze Image (POST Request)
+## Analyze Image (POST Request)
 
 ```bash
 curl -X POST -F "file=@cotton_image.jpg" http://localhost:5000/api/analyze
 ```
 
-## Response Format (JSON)
+---
 
-```bash
+## 📦 Response Format (JSON)
+
+```json
 {
   "status": "success",
   "analysis": {
@@ -84,60 +167,74 @@ curl -X POST -F "file=@cotton_image.jpg" http://localhost:5000/api/analyze
 }
 ```
 
-## 🎯 How to Use
+---
 
-### 🌐 Web Interface
+# 🎯 Usage
 
-1. Go to `/analyze`  
-2. Upload a cotton crop image  
-3. View detailed results with confidence scores  
-4. Download JSON report for records  
+## 🌐 Web Interface
+
+1. Go to `/analyze`
+2. Upload a cotton crop image
+3. View detailed analysis results
+4. Download the JSON report if needed
 
 ---
 
-## 📈 Model Performance
+# 📈 Model Performance
 
 - ✅ Accuracy: **~85–90%** on test data  
 - ⚡ Processing Time: **< 2 seconds per image**  
-- 🖼️ Supported Formats: JPG, PNG, JPEG  
-- 📦 Max File Size: 10MB  
+- 🖼️ Supported Formats: **JPG, PNG, JPEG**  
+- 📦 Maximum File Size: **10MB**
 
 ---
 
-## 🚀 Future Enhancements
+# 🚀 Future Enhancements
 
-- 📱 Mobile application  
+- 📱 Mobile application support  
 - 🎥 Real-time video analysis  
 - 🌾 Multi-crop support  
 - ☁️ Weather data integration  
-- 📊 Yield prediction  
+- 📊 Yield prediction system  
 - 🧠 Improved AI models  
 
 ---
 
-## 🤝 Contributing & Commit
+# 🤝 Contributing
 
-Contributions are welcome to improve Agri-Vision and make it more useful for farmers and developers.
+Contributions are welcome to improve Agri-Vision and make it more useful for farmers, researchers, and developers.
+
+Feel free to:
+
+- Fork the repository  
+- Create a feature branch  
+- Submit a pull request  
 
 ---
 
-## 📜 License
+# 📜 License
 
-This project is licensed under the MIT License.  
+This project is licensed under the **MIT License**.  
 See the `LICENSE` file for more details.
 
 ---
 
-## 🙌 Acknowledgements
+# 🙌 Acknowledgements
 
-- Open-source libraries: TensorFlow, Flask, OpenCV  
+Special thanks to:
+
+- TensorFlow  
+- Flask  
+- OpenCV  
+- Open-source contributors  
 - Agricultural research datasets  
-- Contributors and community support  
+
+---
 
 <div align="center">
 
-**Made with ❤️ by the neeru24**
+## ❤️ Made with Passion by neeru24
 
-⭐ **Don't forget to star this repo if you found it helpful.** ⭐
+⭐ If you found this project helpful, consider giving it a star. ⭐
 
 </div>
